@@ -45,13 +45,4 @@ export class NotificationService {
       duration: duration,
     } as INotification);
   }
-
-  public pushNotifications(notification: INotification) {
-    this.notifications.push({
-      ...notification,
-      timeDate: notification.timeDate
-        ? notification.timeDate
-        : new Date().toISOString(),
-    });
-  }
 }

@@ -13,7 +13,8 @@
     padding: 24px 15px 20px 15px;
     position: relative;
     background-color: #ffffff;
-    font-size: 16px;
+    font-size: 14px;
+    transition: transform 0.3s ease;
 
     &:hover button {
       display: block;
@@ -43,4 +44,12 @@
       text-align: right;
     }
   }
+}
+
+.removed {
+  transform: translate(-50%, -50%);
+}
+
+.deleted {
+  transform: translateX(-120%);
 }

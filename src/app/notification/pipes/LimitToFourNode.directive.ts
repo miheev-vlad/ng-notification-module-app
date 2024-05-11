@@ -15,10 +15,16 @@ export class LimitToFourNodeDirective implements OnInit {
         this.viewContainerRef.element.nativeElement.childNodes.length > 4 &&
         this.viewContainerRef.element.nativeElement.firstChild
       ) {
-        this.renderer.removeChild(
-          this.viewContainerRef.element.nativeElement,
-          this.viewContainerRef.element.nativeElement.firstChild
+        this.renderer.addClass(
+          this.viewContainerRef.element.nativeElement.firstChild,
+          'removed'
         );
+        setTimeout(() => {
+          this.renderer.removeChild(
+            this.viewContainerRef.element.nativeElement,
+            this.viewContainerRef.element.nativeElement.firstChild
+          );
+        }, 300);
       }
     });
 

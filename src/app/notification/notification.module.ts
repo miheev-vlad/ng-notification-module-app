@@ -7,6 +7,10 @@ import { NotificationItemComponent } from './components/notification-nav-bar/com
 import { NotificationContainerComponent } from './components/notification-container/notification-container.component';
 import { LimitToFourNodeDirective } from './pipes/LimitToFourNode.directive';
 import { NotificationComponent } from './components/notification/notification.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './store/reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { NotificationEffects } from './store/effects';
 
 @NgModule({
   declarations: [
@@ -19,6 +23,10 @@ import { NotificationComponent } from './components/notification/notification.co
     NotificationComponent,
   ],
   exports: [NotificationComponent],
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    StoreModule.forFeature('notification', reducers),
+    EffectsModule.forFeature([NotificationEffects]),
+  ],
 })
 export class NotificationModule {}

@@ -3,23 +3,22 @@
   id="box"
   *ngIf="notificationService.showNotificationCenter$ | async"
 >
-  <div class="clear-button-wrapper">
-    <button class="clear-button" (click)="clearNotifications()">
-      Архивировать все
-    </button>
-  </div>
   <ng-container
-    *ngIf="
-      notificationService.notifications.length;
-      else noNotificationTemplate
-    "
-  >
+    *ngIf="notificationsLength$ | async; else noNotificationTemplate"
+    ><div class="clear-button-wrapper">
+      <button class="clear-button" (click)="clearNotifications()">
+        Архивировать все
+      </button>
+    </div>
     <app-notification-item
-      *ngFor="let notification of notificationService.notifications"
+      *ngFor="let notification of notifications$ | async"
+      [id]="notification.id"
       [title]="notification.title"
       [message]="notification.message"
       [timeDate]="notification.timeDate!"
     ></app-notification-item>
   </ng-container>
-  <ng-template #noNotificationTemplate> Уведомлений нет </ng-template>
+  <ng-template #noNotificationTemplate
+    ><div class="empty-message">Уведомлений нет</div></ng-template
+  >
 </div>

@@ -44,9 +44,12 @@ export class NotificationContainerComponent implements OnInit {
     const notificationBox = this.renderer.createElement('div');
     const button = this.renderer.createElement('button');
     this.renderer.appendChild(button, this.renderer.createText('x'));
-    this.renderer.listen(button, 'click', () =>
-      this.closeElement(notificationBox)
-    );
+    this.renderer.listen(button, 'click', () => {
+      this.renderer.addClass(notificationBox, 'deleted');
+      setTimeout(() => {
+        this.closeElement(notificationBox);
+      }, 300);
+    });
 
     const header = this.renderer.createElement('b');
     const content = this.renderer.createElement('div');
