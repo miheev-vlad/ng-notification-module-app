@@ -26,6 +26,7 @@ export class ServerStreamService {
           id: event.lastEventId,
           title: `Уведомение № ${event.lastEventId}`,
           message: `Сервер (${event.origin}) передал данные - ${event.data}`,
+          timeDate: new Date().toISOString(),
         });
       });
 
