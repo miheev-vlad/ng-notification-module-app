@@ -6,16 +6,11 @@ import { INotification } from '../types/notification.interface';
   providedIn: 'root',
 })
 export class NotificationService {
-  notifications: INotification[] = [];
   public showNotificationCenter$: BehaviorSubject<boolean> =
     new BehaviorSubject<boolean>(false);
 
   get notification() {
     return this.notification$.asObservable();
-  }
-
-  get notificationsLength(): number {
-    return this.notifications.length;
   }
 
   constructor() {}
