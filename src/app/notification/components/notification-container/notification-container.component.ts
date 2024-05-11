@@ -45,10 +45,11 @@ export class NotificationContainerComponent implements OnInit {
     const button = this.renderer.createElement('button');
     this.renderer.appendChild(button, this.renderer.createText('x'));
     this.renderer.listen(button, 'click', () => {
+      this.renderer.removeClass(notificationBox, 'slideInFromBottom');
       this.renderer.addClass(notificationBox, 'deleted');
       setTimeout(() => {
         this.closeElement(notificationBox);
-      }, 300);
+      }, 500);
     });
 
     const header = this.renderer.createElement('b');
@@ -77,6 +78,7 @@ export class NotificationContainerComponent implements OnInit {
     );
     this.renderer.appendChild(time, formattedTime);
 
+    this.renderer.addClass(notificationBox, 'slideInFromBottom');
     this.renderer.appendChild(this.container.nativeElement, notificationBox);
     this.renderer.appendChild(notificationBox, button);
     this.renderer.appendChild(notificationBox, header);

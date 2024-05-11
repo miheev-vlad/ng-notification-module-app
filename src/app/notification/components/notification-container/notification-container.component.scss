@@ -14,7 +14,7 @@
     position: relative;
     background-color: #ffffff;
     font-size: 14px;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
 
     &:hover button {
       display: block;
@@ -47,9 +47,23 @@
 }
 
 .removed {
-  transform: translate(-20%, -120%);
+  transform: translate(-20%, -110%);
 }
 
 .deleted {
   transform: translateX(-120%);
+}
+
+.slideInFromBottom {
+  animation: slideIn 0.5s ease-in-out forwards;
+  transform: translateY(100%);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(50%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
