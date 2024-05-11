@@ -1,0 +1,15 @@
+nav {
+  display: flex;
+  align-items: center;
+  background: #f15044;
+  height: 55px;
+  position: relative;
+  padding-top: 5px;
+
+  .logo {
+    flex: 1;
+    margin-left: 50px;
+    color: #eee;
+    font-size: 20px;
+  }
+}

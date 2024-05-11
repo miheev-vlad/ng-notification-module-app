@@ -1,0 +1,10 @@
+<div class="notification-item">
+  <div class="text">
+    <h4>{{ title }}</h4>
+    <p>{{ message }}</p>
+  </div>
+  <div class="time-date">
+    <div>{{ timeDate | date : "dd.MM.yyyy HH:mm" }}</div>
+  </div>
+  <button (click)="removeNotification()">x</button>
+</div>

@@ -1,0 +1,25 @@
+<div
+  class="notification-center"
+  id="box"
+  *ngIf="notificationService.showNotificationCenter$ | async"
+>
+  <div class="clear-button-wrapper">
+    <button class="clear-button" (click)="clearNotifications()">
+      Архивировать все
+    </button>
+  </div>
+  <ng-container
+    *ngIf="
+      notificationService.notifications.length;
+      else noNotificationTemplate
+    "
+  >
+    <app-notification-item
+      *ngFor="let notification of notificationService.notifications"
+      [title]="notification.title"
+      [message]="notification.message"
+      [timeDate]="notification.timeDate!"
+    ></app-notification-item>
+  </ng-container>
+  <ng-template #noNotificationTemplate> Уведомлений нет </ng-template>
+</div>
