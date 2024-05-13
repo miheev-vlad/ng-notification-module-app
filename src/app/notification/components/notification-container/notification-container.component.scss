@@ -47,14 +47,14 @@
 }
 
 .removed {
-  transform: translate(-20%, -110%);
+  transform: translateY(90%);
 }
 
 .deleted {
   transform: translateX(-120%);
 }
 
-.slideInFromBottom {
+.slide-in-from-bottom {
   animation: slideIn 0.5s ease-in-out forwards;
   transform: translateY(100%);
 }

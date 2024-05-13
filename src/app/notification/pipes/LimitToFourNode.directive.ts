@@ -17,7 +17,7 @@ export class LimitToFourNodeDirective implements OnInit {
       ) {
         this.renderer.removeClass(
           this.viewContainerRef.element.nativeElement.firstChild,
-          'slideInFromBottom'
+          'slide-in-from-bottom'
         );
         this.renderer.addClass(
           this.viewContainerRef.element.nativeElement.firstChild,
