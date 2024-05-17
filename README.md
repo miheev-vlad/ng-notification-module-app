@@ -1,4 +1,4 @@
-# PushNotificationApp
+# PushApp
 
 ## Запуск проекта
 
